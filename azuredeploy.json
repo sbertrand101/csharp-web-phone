@@ -34,7 +34,7 @@
             "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
           ],
           "properties": {
-            "RepoUrl": "https://github.com/BandwidthExamples/csharp-web-sms-chat.git",
+            "RepoUrl": "https://github.com/BandwidthExamples/csharp-web-phone.git",
             "branch": "master",
             "IsManualIntegration": true
           }
