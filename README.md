@@ -1,6 +1,6 @@
-## csharp-web-sms-chat
+## csharp-web-phone
 
-C# backend for web-based chat application that features Catapult SMS and MMS capabilities
+C# backend for web-based phone application
 
 * [Creating Application](http://ap.bandwidth.com/docs/rest-api/applications/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
 * [Searching for Phone Number](http://ap.bandwidth.com/docs/rest-api/available-numbers/#resourceGETv1availableNumberslocal/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
@@ -27,7 +27,7 @@ C# backend for web-based chat application that features Catapult SMS and MMS cap
 Clone the web application.
 
 ```console
-git clone https://github.com/BandwidthExamples/csharp-web-sms-chat.git
+git clone https://github.com/BandwidthExamples/csharp-web-phone.git
 ```
 
 Open solution file in Visual Studio and build it.
