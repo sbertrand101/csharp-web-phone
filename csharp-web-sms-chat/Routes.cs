@@ -48,7 +48,9 @@ namespace WebSmsChat
             var client = WebSocketSmsChatHandler.GetCatapultClientByUserId(userId);
             if (client != null)
             {
-              await ProcessCallEvent(userId, client, evnt, $"http://{Request.Url.HostName}", $"{Request.Url.HostName.Split('.').First()}.bwapp.bwsip.io");
+              var domainName = Request.Url.HostName.Split('.').First();
+              domainName = domainName.Substring(0, Math.Min(15, domainName.Length));
+              await ProcessCallEvent(userId, client, evnt, $"http://{Request.Url.HostName}", $"{domainName}.bwapp.bwsip.io");
             }
 
           }
