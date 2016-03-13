@@ -16,7 +16,7 @@ namespace WebSmsChat
     protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
     {
       var staticFiles = new[]
-      {"/smschat", "/index.html", "/config.js", "/build.", "/vendor/", "/app/", "/styles/", "/jspm_packages/", "/node_modules/", "/sounds/"};
+      {"/smschat", "/index.html", "/config.js", "/build.", "/vendor/", "/app/", "/styles/", "/jspm_packages/", "/node_modules/", "/sounds/", ".map"};
       pipelines.BeforeRequest += c =>
       {
         //SPA support
