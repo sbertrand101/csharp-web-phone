@@ -169,6 +169,7 @@ namespace WebSmsChat
           var applicationName = $"web-sms-chat on {baseUrl.Host}";
           var userId = (string)((Dictionary<string, object>) message["Auth"])["UserId"];
           var domainName = socket.WebSocketContext.RequestUri.Host.Split('.').First();
+          domainName = domainName.Substring(0, Math.Min(15, domainName.Length));
           Debug.Print("Getting application id");
           var application = await GetApplication(client,baseUrl,applicationName,userId);
           Debug.Print("Getting phone number");
