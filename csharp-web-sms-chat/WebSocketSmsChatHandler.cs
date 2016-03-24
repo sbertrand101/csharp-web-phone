@@ -11,6 +11,8 @@ using Nancy.AspNet.WebSockets;
 using Nancy.Json;
 using System.Collections.Concurrent;
 using System.Threading;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WebSmsChat
 {
@@ -164,12 +166,18 @@ namespace WebSmsChat
       { "signIn", async (message, socket) =>
         {
           message["Auth"] = message["Data"];
+          var userId = (string)((Dictionary<string, object>) message["Auth"])["UserId"];
           var client = GetCatapultClient(message);
           var baseUrl = new UriBuilder(socket.WebSocketContext.RequestUri) {Path = "/"};
           var applicationName = $"web-sms-chat on {baseUrl.Host}";
-          var userId = (string)((Dictionary<string, object>) message["Auth"])["UserId"];
-          var domainName = socket.WebSocketContext.RequestUri.Host.Split('.').First();
-          domainName = domainName.Substring(0, Math.Min(15, domainName.Length));
+
+          // Domain name will be unique for host and userId
+          var domainName = $"{baseUrl.Host}-{userId}";
+          using (var sha1 = new SHA1Managed())
+          {
+            domainName = baseUrl.Host[0] + BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(domainName))).Replace("-", "").ToLowerInvariant();
+          }
+          domainName = domainName.Substring(0, Math.Min(15, domainName.Length)); //it should be less 16 symbols (anf first symbol should be letter)
           Debug.Print("Getting application id");
           var application = await GetApplication(client,baseUrl,applicationName,userId);
           Debug.Print("Getting phone number");
