@@ -1,4 +1,9 @@
-## csharp-web-phone
+<div align="center">
+
+# C Sharp Web Phone
+
+<a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
+</div>
 
 C# backend for web-based phone application
 
