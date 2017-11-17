@@ -5,6 +5,9 @@
 <a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
 </div>
 
+<div align="center"> 
+<b>This application is outdated, but will be updated soon!</b><br><br>
+
 C# backend for web-based phone application
 
 * [Creating Application](http://ap.bandwidth.com/docs/rest-api/applications/?utm_medium=social&utm_source=github&utm_campaign=dtolb&utm_content=_)
